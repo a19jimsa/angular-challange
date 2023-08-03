@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-6 mb-4">
+      <div class="card bg-dark text-light">
+        <div class="card-body">
+          <div class="formGroup">
+            <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+              <label for="title">Titel</label>
+              <input
+                id="title"
+                type="text"
+                class="form-control"
+                formControlName="title"
+              />
+              <label for="author">Författare</label>
+              <input
+                id="author"
+                class="form-control"
+                type="text"
+                formControlName="author"
+              />
+              <label for="isbn">ISBN</label>
+              <input
+                id="isbn"
+                class="form-control"
+                type="text"
+                formControlName="isbn"
+              />
+              <label for="date">Datum</label>
+              <input
+                id="date"
+                class="form-control"
+                type="text"
+                formControlName="date"
+              />
+              <button
+                type="submit"
+                [disabled]="!bookForm.valid"
+                class="btn btn-dark"
+              >
+                Lägg till
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<main *ngIf="token !== null">
+  <div class="col text-center">
+    <button [routerLink]="'/create-book'" class="btn btn-dark">
+      Lägg till ny bok
+    </button>
+  </div>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div
+        *ngFor="let book of books; let i = index"
+        class="col-sm-4 mb-3 mb-sm-0"
+      >
+        <div class="card text-light bg-dark">
+          <div class="card-body">
+            <div>Titel: {{ book.title }}</div>
+            <div>Författare: {{ book.author }}</div>
+            <div>ISBN: {{ book.isbn }}</div>
+            <div>Publiceringsdatum: {{ book.date }}</div>
+            <button (click)="update(book)" class="btn btn-dark">
+              Redigera
+            </button>
+            <button (click)="remove(book.id)" class="btn btn-dark">
+              Radera
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-sm-4 mb-3 mb-sm-0">
+      <div class="card text-light bg-dark">
+        <div class="card-body">
+          <h5 class="card-title">Logga in</h5>
+          <div class="formGroup">
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+              <label for="title">Titel</label>
+              <input
+                id="title"
+                type="text"
+                class="form-control"
+                formControlName="title"
+              />
+              <label for="author">Författare</label>
+              <input
+                id="author"
+                class="form-control"
+                type="text"
+                formControlName="author"
+              />
+              <label for="isbn">ISBN</label>
+              <input
+                id="isbn"
+                class="form-control"
+                type="text"
+                formControlName="isbn"
+              />
+              <label for="date">Datum</label>
+              <input
+                id="date"
+                class="form-control"
+                type="text"
+                formControlName="date"
+              />
+              <button
+                type="submit"
+                [disabled]="!myForm.valid"
+                class="btn btn-dark"
+              >
+                Uppdatera
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+<div class="alert alert-success" role="alert" *ngIf="show">
+  Du är nu inloggad
+</div>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-sm-4 mb-3 mb-sm-0">
+      <div class="card text-light bg-dark">
+        <div class="card-body">
+          <h5 class="card-title">Logga in</h5>
+          <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <label for="username" class="form-label">Användarnamn:</label>
+            <input
+              id="username"
+              type="text"
+              class="form-control"
+              formControlName="username"
+            />
+            <label for="password" class="form-label">Lösenord:</label>
+            <input
+              id="password"
+              type="password"
+              class="form-control"
+              formControlName="password"
+            />
+            <br />
+            <button
+              type="submit"
+              [disabled]="!loginForm.valid"
+              class="btn btn-dark"
+            >
+              Logga in
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4 mb-3 mb-sm-0">
+      <div class="card text-light bg-dark">
+        <div class="card-body">
+          <h5 class="card-title">Registrera</h5>
+          <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+            <label for="registerName" class="form-label">Användarnamn:</label>
+            <input
+              id="registerName"
+              class="form-control"
+              type="text"
+              formControlName="username"
+            />
+            <label for="registerPassword" class="form-label">Lösenord:</label>
+            <input
+              class="form-control"
+              id="registerPassword"
+              type="password"
+              formControlName="password"
+            />
+            <br />
+            <button
+              type="submit"
+              [disabled]="!registerForm.valid"
+              class="btn btn-dark"
+            >
+              Registrera
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button (click)="logOut()" class="btn btn-dark">Logga ut</button>
