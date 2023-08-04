@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { FormComponent } from './form/form.component';
 import { UpdateFormComponent } from './update-form/update-form.component';
 import { LoginComponent } from './login/login.component';
+import { MyQuoteComponent } from './my-quote/my-quote.component';
+import { QuoteFormComponent } from './quote-form/quote-form.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { LoginComponent } from './login/login.component';
     FormComponent,
     UpdateFormComponent,
     LoginComponent,
+    MyQuoteComponent,
+    QuoteFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,29 @@
+<p>quote-form works!</p>
+<div class="container" *ngIf="token !== null">
+  <div class="row justify-content-center">
+    <div class="col-sm-6 mb-4">
+      <div class="card bg-dark text-light">
+        <div class="card-body">
+          <div class="formGroup">
+            <form [formGroup]="quoteForm" (ngSubmit)="onSubmit()">
+              <label for="quote">Citat</label>
+              <input
+                id="quote"
+                type="text"
+                class="form-control"
+                formControlName="quote"
+              />
+              <button
+                type="submit"
+                [disabled]="!quoteForm.valid"
+                class="btn btn-dark"
+              >
+                Lägg till
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

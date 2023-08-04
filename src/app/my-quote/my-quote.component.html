@@ -1,0 +1,17 @@
+<app-quote-form (newItemEvent)="onDataChanged($event)"></app-quote-form>
+<div class="container" *ngIf="token !== null">
+  <div class="row justify-content-center">
+    <div class="col-sm-6 mb-4">
+      <div class="card bg-dark text-light">
+        <div class="card-body">
+          <h5 class="card-title">Mina favoritcitat</h5>
+          <div *ngFor="let quote of quotes; let i = index">
+            <div>
+              <i>"{{ quote.text }}"</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
